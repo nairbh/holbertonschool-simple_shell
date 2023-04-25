@@ -1,6 +1,7 @@
 #include "shell.h"
 /**
  * custom_strdup - Copies a string into a newly allocated memory block
+ *
  * @source: Pointer to the source string to be copied
  *
  * Return: Pointer to the newly allocated memory
@@ -22,14 +23,12 @@ char *custom_strdup(const char *source)
 	return (destination);
 }
 /**
-*
-* custom_strcpy - Copies a string from source to destination
-* @destination: Pointer to the destination buffer
-* @source: Pointer to the source string
-* This function copies the string pointed to by source (including the
-* terminating null character) to the buffer pointed to by destination.
-* Return: Pointer to the destination buffer
-*/
+ * custom_strlen - Calculates the length of a string
+ *
+ * @str: Pointer to the string to be measured
+ *
+ * Return: Length of the string
+ */
 int custom_strlen(char *str)
 {
 	int length = 0;
@@ -42,10 +41,10 @@ int custom_strlen(char *str)
 }
 /**
  * custom_strcmp - Compares two strings
+ *
  * @str1: Pointer to the first string to be compared
  * @str2: Pointer to the second string to be compared
  *
- * This function takes two pointers to strings as input and compares them
  * Return: Integer value representing the result of the comparison
  */
 int custom_strcmp(const char *str1, const char *str2)
@@ -62,15 +61,16 @@ int custom_strcmp(const char *str1, const char *str2)
 	return (*str1 - *str2);
 }
 /**
-* Copies a string from source to destination.
-* 
-* @param destination The destination buffer.
-* 
-* @param source The source string.
-* 
-* @return The pointer to the destination buffer.
-*/
-
+ * custom_strcpy - Copies a string from source to destination
+ *
+ * @destination: Pointer to the destination buffer
+ * @source: Pointer to the source string
+ *
+ * This function copies the string pointed to by source (including the
+ * terminating null character) to the buffer pointed to by destination.
+ *
+ * Return: Pointer to the destination buffer
+ */
 void custom_strcpy(char *destination, const char *source)
 
 {
@@ -85,12 +85,15 @@ void custom_strcpy(char *destination, const char *source)
 }
 
 /**
- * custom_strcat: concatenates a source string to the end of a destination
+ * custom_strcat - Concatenates a source string to the end of a destination
  *
- * destination: a pointer of type char that represents the destination string
- * source: a constant pointer of type char that represents the source string
+ * @destination: Pointer to the destination buffer
+ * @source: Pointer to the source string
+ *
+ * This function appends the string pointed to by source (including the
+ * terminating null character) to the end of the string pointed to by
+ * destination.
  */
-
 void custom_strcat(char *destination, const char *source)
 {
 	/* Get the length of the destination string */
