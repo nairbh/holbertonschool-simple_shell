@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * custom_getenv - gets the value of an environment variable
@@ -11,19 +11,21 @@ char *custom_getenv(const char *key)
 {
 	unsigned long hash = 5381;
 	int c;
+	int index;
+	env_var_node_t *current;
 
 	while ((c = *key++))
 	{
 		hash = ((hash << 5) + hash) + c;
 	}
 
-	int index = hash % MAX_ENV_VARS;
+	index = hash % MAX_ENV_VARS;
 
-	env_var_node_t *current = env_vars[index];
+	current = env_vars[index];
 
 	while (current != NULL)
 	{
-		if (strcmp(current->key, key) == 0)
+		if (custom_strcmp(current->key, key) == 0)
 		{
 			return (current->value);
 		}
@@ -45,15 +47,18 @@ int custom_setenv(const char *key, const char *value, int overwrite)
 {
 	unsigned long hash = 5381;
 	int c;
+	int index;
+	env_var_node_t *current;
+	env_var_node_t *new_node;
 
 	while ((c = *key++))
 	{
 		hash = ((hash << 5) + hash) + c;
 	}
 
-	int index = hash % MAX_ENV_VARS;
+	index = hash % MAX_ENV_VARS;
 
-	env_var_node_t *current = env_vars[index];
+	current = env_vars[index];
 
 	while (current != NULL)
 	{
@@ -69,7 +74,7 @@ int custom_setenv(const char *key, const char *value, int overwrite)
 		current = current->next;
 	}
 
-	env_var_node_t *new_node = (env_var_node_t *)malloc(sizeof(env_var_node_t));
+	new_node = (env_var_node_t *)malloc(sizeof(env_var_node_t));
 
 	if (new_node == NULL)
 	{

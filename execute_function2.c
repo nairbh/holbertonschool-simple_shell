@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * search_command_in_path - Searches for a command in the directories
@@ -30,4 +30,16 @@ char *search_command_in_path(const char *command)
 	free(path_copy);
 	free(executable_path);
 	return (NULL);
+}
+
+int file_exists(const char *filepath) {
+  FILE *file = fopen(filepath, "r");
+  {
+    if (file != NULL) {
+      fclose(file);
+      return (1);
+    } else {
+      return (0);
+    }
+  }
 }

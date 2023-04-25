@@ -11,7 +11,7 @@ char *custom_strdup(const char *source)
 	int length = custom_strlen((char *)source) + 1;
 	/* +1 for the null-terminator */
 
-	char *desstination = malloc(length * sizeof(char));
+	char *destination = malloc(length * sizeof(char));
 
 	if (destination == NULL)
 	{
