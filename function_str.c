@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * custom_strdup - Copies a string into a newly allocated memory block
  *
@@ -53,7 +54,7 @@ int custom_strcmp(const char *str1, const char *str2)
 	{
 		if (*str1 != *str2)
 		{
-		return (*str2 - *str2);
+		return (*str1 - *str2);
 		}
 		str1++;
 		str2++;

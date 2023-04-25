@@ -1,5 +1,7 @@
 #include "shell.h"
 
+env_var_node_t *env_vars[MAX_ENV_VARS] = {NULL};
+
 int main(void)
 {
 	char *buffer = NULL;

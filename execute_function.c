@@ -1,4 +1,5 @@
 #include "shell.h"
+
 /**
  * create_command_node - Creates a new command node for the linked list
  * @command: the command to add to the new node

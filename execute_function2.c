@@ -8,7 +8,6 @@
  * Return: a pointer to a string containing the full path to the command if
  * found, otherwise NULL
  */
-
 char *search_command_in_path(const char *command)
 {
 	char *path = custom_getenv("PATH");
@@ -31,15 +30,24 @@ char *search_command_in_path(const char *command)
 	free(executable_path);
 	return (NULL);
 }
-
-int file_exists(const char *filepath) {
-  FILE *file = fopen(filepath, "r");
-  {
-    if (file != NULL) {
-      fclose(file);
-      return (1);
-    } else {
-      return (0);
-    }
-  }
+/**
+ * file_exists - checks if a file exists at the given filepath
+ * @filepath: the path to the file to check
+ *
+ * Return: 1 if the file exists, 0 otherwise
+ */
+int file_exists(const char *filepath)
+{
+	FILE *file = fopen(filepath, "r");
+	{
+		if (file != NULL)
+	{
+		fclose(file);
+		return (1);
+	}
+		else
+		{
+			return (0);
+		}
+	}
 }
