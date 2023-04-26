@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * read_line - Reads a line from stdin and stores it in the provided buffer.
  * @buffer: Pointer to the buffer where the line should be stored.
