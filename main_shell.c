@@ -7,7 +7,7 @@ int main(void)
 	size_t buffer_size = 0;
 	command_node_t *head = NULL;
 
-	custom_setenv("PATH", "/bin:/usr/bin:/usr/local/bin:/usr/sbin", 1);
+	custom_setenv("PATH", "/bin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin", 1);
 
 	while (1)
 	{

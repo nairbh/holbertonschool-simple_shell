@@ -22,7 +22,7 @@ int read_line(char **buffer, size_t *buffer_size)
 
 	if ((*buffer)[length - 1] == '\n')
 	{
-	(*buffer)[length - 1] = END_STRING;
+	(*buffer)[length - 1] = '\0';
 	length--;
 	}
 
