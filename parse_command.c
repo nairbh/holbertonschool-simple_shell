@@ -2,7 +2,7 @@
 
 char **parse_args(char *command)
 {
-	int i;
+
 	char *token;
 	int argc = 0;
 	char **argv = malloc(sizeof(char *) * (COMMAND_SIZE / 2));
