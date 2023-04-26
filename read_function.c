@@ -7,6 +7,7 @@
  *
  * Return: Length of the read line, or -1 on failure.
  */
+
 int read_line(char **buffer, size_t *buffer_size)
 {
 	ssize_t length = 0;
