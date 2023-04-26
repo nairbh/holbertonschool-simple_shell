@@ -111,7 +111,7 @@ int execute_command(char *command)
 	}
 	else
 	{
-	fprintf("%s: command not found\n", argv[0]);
+	fprintf(stderr, "%s: command not found\n", argv[0]);
 	}
 	exit(EXIT_FAILURE);
 	}
