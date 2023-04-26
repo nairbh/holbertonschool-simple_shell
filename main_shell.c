@@ -18,11 +18,11 @@ int main(void)
 			printf("\n");
 			break;
 		}
-		if (custom_strcmp(buffer, "exit") == 0)
+		if (strcmp(buffer, "exit") == 0)
 		{
 			exit(0);
 		}
-		else if (custom_strcmp(buffer, "env") == 0)
+		else if (strcmp(buffer, "env") == 0)
 		{
 			char **env;
 
@@ -31,11 +31,11 @@ int main(void)
 				printf("%s\n", *env);
 			}
 		}
-		else if (custom_strcmp(buffer, "help") == 0)
+		else if (strcmp(buffer, "help") == 0)
 		{
 			print_help();
 		}
-		else if (execute_linked_command(head, buffer) == -1)
+		else if (strlen(buffer) > 0 && execute_linked_command(head, buffer) == -1)
 		{
 			add_command_node(&head, buffer);
 			printf("%s: command not found\n", buffer);

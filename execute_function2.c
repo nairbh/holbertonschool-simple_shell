@@ -15,6 +15,9 @@ char *search_command_in_path(const char *command)
 	char *path_dir = strtok(path_copy, ":");
 	char *executable_path = malloc(BUFFER_SIZE);
 
+	if (command == NULL || path == NULL)
+	return (NULL);
+
 	while (path_dir)
 	{
 		sprintf(executable_path, "%s/%s", path_dir, command);

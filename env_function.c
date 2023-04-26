@@ -26,7 +26,7 @@ char *custom_getenv(const char *key)
 
 	while (current != NULL)
 	{
-		if (custom_strcmp(current->key, key) == 0)
+		if (strcmp(current->key, key) == 0)
 		{
 			return (current->value);
 		}
@@ -63,12 +63,12 @@ int custom_setenv(const char *key, const char *value, int overwrite)
 
 	while (current != NULL)
 	{
-		if (custom_strcmp(current->key, key) == 0)
+		if (strcmp(current->key, key) == 0)
 		{
 			if (overwrite)
 			{
 				free(current->value);
-				current->value = custom_strdup(value);
+				current->value = strdup(value);
 			}
 			return (0);
 		}
@@ -83,8 +83,8 @@ int custom_setenv(const char *key, const char *value, int overwrite)
 		exit(EXIT_FAILURE);
 	}
 
-	new_node->key = custom_strdup(key);
-	new_node->value = custom_strdup(value);
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
 	new_node->next = env_vars[index];
 	env_vars[index] = new_node;
 

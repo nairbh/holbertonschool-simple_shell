@@ -75,7 +75,7 @@ int execute_linked_command(command_node_t *head, char *command)
 
 	while (current != NULL)
 	{
-	if (custom_strcmp(current->command, command) == 0)
+	if (strcmp(current->command, command) == 0)
 	{
 	return (execute_command(command));
 	}
