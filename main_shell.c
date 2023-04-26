@@ -1,6 +1,9 @@
 #include "shell.h"
 
-
+/**
+ * main - simple shell
+ * Return:0
+ */
 int main(void)
 {
 	char *buffer = NULL;
