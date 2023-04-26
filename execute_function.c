@@ -6,6 +6,7 @@
  *
  * Return: Pointer to the new node created
  */
+
 command_node_t *create_command_node(char *command)
 
 {
