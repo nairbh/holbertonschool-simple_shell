@@ -29,7 +29,7 @@ if (new_node == NULL)
  * @command: command to be added to the new node
  */
 void add_command_node(command_node_t **head, char *command)
-{	
+{
 	command_node_t *current;
 
 	if (*head == NULL)

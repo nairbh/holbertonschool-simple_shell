@@ -28,8 +28,7 @@ typedef struct env_var_node {
   char *value;
   struct env_var_node *next;
 } env_var_node_t;
-extern env_var_node_t *env_vars[MAX_ENV_VARS];
-/* extern env_var_node_t *env_vars[MAX_ENV_VARS]; */
+
 
 void add_command_node(command_node_t **head, char *command);
 command_node_t *create_command_node(char *command);
@@ -43,13 +42,8 @@ void free_command_list(command_node_t *head);
 char *search_command_in_path(const char *command);
 char **parse_args(char *command);
 
-int custom_strlen(char *str);
-char *custom_strdup(const char *source);
-void custom_strcpy(char *destination, const char *source);
-void custom_strcat(char *destination, const char *source);
 int file_exists(const char *filepath);
 int custom_isspace(int ch);
-int custom_strcmp(const char *str1, const char *str2);
 int custom_isprint(int ch);
 void print_help();
 
