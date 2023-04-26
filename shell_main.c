@@ -5,7 +5,6 @@ int main(void)
 	char *buffer = NULL;
 	char *executable_path = NULL;
 	size_t buffer_size = 0;
-	size_t exec_path_size = BUFFER_SIZE;
 
 	executable_path = malloc(BUFFER_SIZE);
 
