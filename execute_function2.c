@@ -8,6 +8,7 @@
  * Return: a pointer to a string containing the full path to the command if
  * found, otherwise NULL
  */
+
 char *search_command_in_path(const char *command)
 {
 	char *path = custom_getenv("PATH");
