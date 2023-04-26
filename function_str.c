@@ -7,6 +7,7 @@
  *
  * Return: Pointer to the newly allocated memory
  */
+
 char *custom_strdup(const char *source)
 {
 	int length = custom_strlen((char *)source) + 1;
