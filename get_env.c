@@ -39,5 +39,6 @@ char *get_value_from_env(const char *env, char *value)
 	for (count = 0; count < env_len - separator_pos - 1; count++)
 	value[count] = env[count + separator_pos + 1];
 
+	free(value);
 	return (value);
 }
