@@ -10,7 +10,7 @@ int main(void)
 
 	while (status)
 	{
-		status = isatty[0];
+		status = isatty(0);
 	printf(PROMPT);	
 
 	if (getline(&buffer, &buffer_size, stdin) <= 0)
