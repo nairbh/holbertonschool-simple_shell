@@ -14,7 +14,7 @@ int main(void)
 		printf("$ ");
 	}
 
-	if (getline(&buffer, &buffer_size, stdin) <= 0)
+	if (get_env_value(&buffer, &buffer_size, stdin) <= 0)
 	{
 	printf("\n");
 	break;
