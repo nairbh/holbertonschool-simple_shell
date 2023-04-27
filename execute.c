@@ -6,26 +6,30 @@
  */
 void execute_command(char **command)
 {
-	pid_t pid;
+	pid_t pid;	
 	int status;
 	pid = fork();
 
 	if (pid == -1)
 	{
-	perror("fork failed");
-	exit(EXIT_FAILURE);
+		perror("fork failed");
+		exit(EXIT_FAILURE);
 	}
 
 	else if (pid == 0)
 	{
-	if (execve(command[0], command, environ) == -1)
+ 	if (execve(command[0], command, environ) == -1)
+		{
+			perror("failed execute");
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
 	{
-	perror("failed execute");
-	exit(EXIT_FAILURE);
-	}
-	}
 		waitpid(pid, &status, 0);
+	}
 }
+
 /**
  * find_execute_command - finds the path to the executabl* @command: the command to be executed
  * @executable_path: the path to the executable
@@ -72,11 +76,13 @@ int find_execute_command(char *command, char *executable_path)
  
 	}
 	}
+
 	for (i = 1; argv[i] != NULL; i++)
-	{
+{	argv[0] = executable_path;
 	strcat(executable_path, " ");
 	strcat(executable_path, argv[i]);
-	}
+}
+
 	free(argv);
 	return (found_executable);
 }
