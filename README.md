@@ -164,9 +164,13 @@ hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
 ```
+<h2> Flowchart</h2></p>
+
+![Flowchart](https://user-images.githubusercontent.com/124582867/234859580-4af92cc9-1063-42c5-8a45-e66bdd7fc66a.jpg)
 
 <h3>Authors</h3>
 
 Houcine Nair Benrokia - [@nairbh](https://github.com/nairbh)<br>
 
 Nicolas De Sousa - [@Nico-dsa](https://github.com/Nico-dsa)<br> 
+
