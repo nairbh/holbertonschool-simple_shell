@@ -75,7 +75,7 @@ int find_execute_command(char *command, char *executable_path)
 	}
 	for (i = 1; argv[i] != NULL; i++)
 	{
-	strcat(executable_path, " ");
+	strcat(executable_path, "");
 	strcat(executable_path, argv[i]);
 	}
 	free(argv);
