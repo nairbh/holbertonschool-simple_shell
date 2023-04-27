@@ -18,7 +18,7 @@ void execute_command(char **command)
 
 	else if (pid == 0)
 	{
- 	if (execve(command[0], command, environ) == -1)
+		if (execve(command[0], command, environ) == -1)
 		{
 			perror("failed execute");
 			exit(EXIT_FAILURE);
@@ -29,7 +29,6 @@ void execute_command(char **command)
 		waitpid(pid, &status, 0);
 	}
 }
-
 /**
  * find_execute_command - finds the path to the executabl* @command: the command to be executed
  * @executable_path: the path to the executable
@@ -48,7 +47,7 @@ int find_execute_command(char *command, char *executable_path)
 	}
 
 	if (file_exists(argv[0]))
-	{
+	{	
 	found_executable = 1;
 	strcpy(executable_path, argv[0]);
 	}
@@ -65,6 +64,7 @@ int find_execute_command(char *command, char *executable_path)
 	strcpy(executable_path, token);
 	strcat(executable_path, "/");
 	strcat(executable_path, argv[0]);
+
 	if (file_exists(executable_path))
 	{
 	found_executable = 1;
@@ -73,16 +73,33 @@ int find_execute_command(char *command, char *executable_path)
 	token = strtok(NULL, ":");
 	}
 	free(path_env_copy);
- 
+	free(path_env);
 	}
 	}
 
-	for (i = 1; argv[i] != NULL; i++)
-{	argv[0] = executable_path;
+        for (i = 1; argv[i] != NULL; i++)
+	{
+	argv[0] = executable_path;
 	strcat(executable_path, " ");
 	strcat(executable_path, argv[i]);
-}
+	}
 
 	free(argv);
 	return (found_executable);
 }
+void free_args(char **args)
+{
+	int i;
+    if (args == NULL)
+        return;
+
+    for (i = 2; args[i] != NULL; i++)
+    {
+        free(args[i]);
+        args[i] = NULL;
+    }
+
+    free(args);
+    args = NULL;
+}
+

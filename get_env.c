@@ -12,7 +12,7 @@ char *get_env_value(const char *name)
 
  	if (strncmp(current_env, name, name_len) == 0 && current_env[name_len] == '=')
 	{
-	value = get_value_from_env(current_env, value);
+	value = get_value_from_env(current_env);
 	break;
 	}
 	}
@@ -20,11 +20,12 @@ char *get_env_value(const char *name)
     return (value);
 }
 
-char *get_value_from_env(const char *env, char *value)
+char *get_value_from_env(const char *env)
 {
 	int env_len = strlen(env);
 	int separator_pos = 0;
 	int count;
+	char *value;
 
 	while (env[separator_pos] != '=')
 
@@ -38,6 +39,7 @@ char *get_value_from_env(const char *env, char *value)
 
 	for (count = 0; count < env_len - separator_pos - 1; count++)
 	value[count] = env[count + separator_pos + 1];
+
 
 	return (value);
 }

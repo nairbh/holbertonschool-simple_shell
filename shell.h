@@ -19,8 +19,8 @@ extern char **environ;
 
 char **parse_args(char *command);
 char *get_env_value(const char *name);
-char *get_value_from_env(const char *env, char *value);
-
+char *get_value_from_env(const char *env);
+void free_args(char **args);
 void execute_command(char **command);
 int file_exists(const char *filepath);
 int find_execute_command(char *command, char *executable_path);
