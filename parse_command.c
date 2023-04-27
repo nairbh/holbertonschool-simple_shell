@@ -5,7 +5,8 @@ char **parse_args(char *command)
 
 	char *token;
 	int argc = 0;
-	char **argv = malloc(sizeof(char *) * (COMMAND_SIZE / 2));
+	int i;
+	char **argv = malloc(sizeof(char *) * (COMMAND_SIZE + 1));
 
 
 	if (argv == NULL)
@@ -19,7 +20,7 @@ char **parse_args(char *command)
 	while (token != NULL)
 	{
 
-	if (argc >= COMMAND_SIZE / 2)
+	if (argc >= COMMAND_SIZE)
 	{
 	fprintf(stderr, "Too many arguments\n");
 	free(argv);
@@ -28,12 +29,11 @@ char **parse_args(char *command)
 	argv[argc++] = token;
 	token = strtok(NULL, " \t");
 	}
-
+	
 	argv[argc] = NULL;
 
 	return (argv);
 }
-
 int file_exists(const char *filepath)
 {
 	struct stat st;

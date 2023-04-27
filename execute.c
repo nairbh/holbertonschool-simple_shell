@@ -50,7 +50,7 @@ int find_execute_command(char *command, char *executable_path)
 	}
 	else
 	{
-	char *path_env = getenv("PATH");
+	char *path_env = get_env_value("PATH");
 
 	if (path_env)
 	{
