@@ -5,11 +5,12 @@ int main(void)
 	char *buffer = NULL;
 	char *executable_path = NULL;
 	size_t buffer_size = 0;
-
+	int status = 1;
 	executable_path = malloc(BUFFER_SIZE);
 
-	while (1)
+	while (status)
 	{
+		status = isatty[0];
 	printf(PROMPT);	
 
 	if (getline(&buffer, &buffer_size, stdin) <= 0)
