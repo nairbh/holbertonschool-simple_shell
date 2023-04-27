@@ -5,13 +5,14 @@ int main(void)
 	char *buffer = NULL;
 	char *executable_path = NULL;
 	size_t buffer_size = 0;
-	int status = 1;
 	executable_path = malloc(BUFFER_SIZE);
 
-	while (status)
+	while (1)
 	{
-		status = isatty(-1);
-	printf(PROMPT);	
+		if (isatty(STDIN_FILENO))
+	{
+		printf("$ ");
+	}
 
 	if (getline(&buffer, &buffer_size, stdin) <= 0)
 	{
