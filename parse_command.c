@@ -49,3 +49,13 @@ int file_exists(const char *filepath)
 	struct stat st;
 	return (stat(filepath, &st) == 0);
 }
+/**
+ * custom_isspace - checks if a given character is a white-space character
+ * @ch: the character to be checked
+ *
+ * Return: 1 if the character is a white-space character, 0 otherwise
+ */
+int custom_isspace(int ch)
+{
+	return (ch == ' ' || ch == '\t' || ch == '\n' || ch == '\r' || ch == '\v');
+}

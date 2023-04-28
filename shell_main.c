@@ -9,7 +9,7 @@ int main(void)
 	char *buffer = NULL;
 	char *executable_path = NULL;
 	size_t buffer_size = 0;
-
+	int i, only_spaces = 1;
 	int status = 1;
 	int getline2;
 
@@ -33,6 +33,19 @@ int main(void)
 
 	buffer[strcspn(buffer, "\n")] = END_STRING_CHAR;
 
+	for (i = 0; buffer[i]; i++)
+        {
+		if (!custom_isspace(buffer[i]))
+		{
+		only_spaces = 0;
+		break;
+		}
+	}
+
+	if (only_spaces)
+	{
+		continue;
+	}
 	if (strcmp(buffer, "exit") == 0)
 	{
 		free_all(NULL, buffer, executable_path);
