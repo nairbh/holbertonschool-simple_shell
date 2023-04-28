@@ -20,10 +20,10 @@
 
        $ ./hsh
 
-      .SH COMMANDS
+.SH COMMANDS
       
      
-       The simple-shell supports various commands :
+      The simple-shell supports various commands :
    
       $ ls
 
