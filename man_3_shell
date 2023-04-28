@@ -6,18 +6,40 @@
 .SH SYNOPSIS
        simple-shell
 
+       #Include "shell.h"
+
 .SH DESCRIPTION
        The simple-shell command launches a basic Unix shell that allows users to interact with
        their operating system through a command-line interface. It supports executing commands,
        running scripts, and basic shell operations.
 
 .SH OPTIONS
-       -c, --command <command>
-              Execute the specified command and exit.
+       To use this shell you have to compile doing and running the program doing :   
+       
+       $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
-       -h, --help
-              Display help information and exit.
+       $ ./hsh
 
+      .SH COMMANDS
+      
+     
+       The simple-shell supports various commands :
+   
+      $ ls
+
+      $ /bin/ls -l
+      
+      $ ls -a
+
+      $ pwd
+ 
+      $ echo 
+
+
+       
+    Execute the specified command and exit.
+
+    exit: Exit the shell.
 .SH SCRIPTS
        The simple-shell can also run shell scripts. A shell script is a file containing a series
        of shell commands that are executed in sequence. To run a script, simply pass its file name
@@ -25,37 +47,6 @@
 
        Note that the script should have the appropriate execute permissions for the user running
        the simple-shell command.
-
-.SH COMMANDS
-       The simple-shell supports various commands that are common in Unix-like operating systems.
-       These include, but are not limited to, the following:
-
-       •  cd <directory>: Change the current working directory to the specified directory.
-
-       •  ls [options] [directory]: List files and directories in the specified directory.
-
-       •  pwd: Print the current working directory.
-
-       •  echo <message>: Display the specified message.
-
-       •  cat <file>: Display the contents of the specified file.
-
-       •  touch <file>: Create a new empty file with the specified name.
-
-       •  rm <file>: Remove the specified file.
-
-       •  mv <source> <destination>: Move or rename a file or directory.
-
-       •  cp <source> <destination>: Copy a file or directory.
-
-       •  exit: Exit the shell.
-
-.SH EXAMPLES
-       $ simple-shell
-              Launches the simple-shell interactively.
-
-       $ simple-shell -c "ls -l"
-              Executes the "ls -l" command and exits.
 
 .SH AUTHOR
        Houcine Nair Benrokia & Nicolas De Sousa
