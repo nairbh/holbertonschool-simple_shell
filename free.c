@@ -18,18 +18,18 @@ void free_string(char *string)
  */
 void free_all(char **command, char *str, char *execute_path)
 {
-    if (command != NULL)
-    {
-        free(command);
-    }
+	if (command != NULL)
+	{
+	free(command);
+	}
 
-    if (str != NULL)
-    {
-        free(str);
-    }
+	if (str != NULL)
+	{
+	free(str);
+	}
 
-    if (execute_path != NULL)
-    {
-        free(execute_path);
-    }
+	if (execute_path != NULL)
+	{
+	free(execute_path);
+	}
 }
