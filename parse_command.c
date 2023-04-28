@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * parse_args - parses the command and its arguments
+ * @command: the command to be parsed
+ *
+ * Return: the parsed command and its arguments
+ */
 char **parse_args(char *command)
 {
 
@@ -33,6 +38,12 @@ char **parse_args(char *command)
 
 	return (argv);
 }
+/**
+ * file_exists - checks if a file exists
+ * @filepath: the path to the file
+ *
+ * Return: 1 if the file exists, 0 otherwise
+ */
 int file_exists(const char *filepath)
 {
 	struct stat st;

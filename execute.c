@@ -30,8 +30,10 @@ void execute_command(char **command)
 	}
 }
 /**
- * find_execute_command - finds the path to the executabl* @command: the command to be executed
+ * find_execute_command - finds the path to the executable and executes the command
+ * @command: the command to be executed
  * @executable_path: the path to the executable
+ * 
  * Return: 1 if the executable was found, 0 otherwise
  */
 int find_execute_command(char *command, char *executable_path)

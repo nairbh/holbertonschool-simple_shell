@@ -1,5 +1,9 @@
 #include "shell.h"
-
+/**
+ * main - the entry point of the shell
+ *
+ * Return: 0 on success, non-zero on failure
+ */
 int main(void)
 {
 	char *buffer = NULL;
