@@ -72,8 +72,8 @@ int find_execute_command(char *command, char *executable_path)
 	}
 	token = strtok(NULL, ":");
 	}
-	free(path_env_copy);
-	free(path_env);
+	free_string(path_env_copy);
+	free_string(path_env);
 	}
 	}
 
@@ -87,19 +87,3 @@ int find_execute_command(char *command, char *executable_path)
 	free(argv);
 	return (found_executable);
 }
-void free_args(char **args)
-{
-	int i;
-    if (args == NULL)
-        return;
-
-    for (i = 2; args[i] != NULL; i++)
-    {
-        free(args[i]);
-        args[i] = NULL;
-    }
-
-    free(args);
-    args = NULL;
-}
-

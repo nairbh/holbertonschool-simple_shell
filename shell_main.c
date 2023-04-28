@@ -21,19 +21,19 @@ int main(void)
 	getline2 = getline(&buffer, &buffer_size, stdin);
 
 	if (getline2 == -1)
-	{
-		free(buffer);
-		free(executable_path);
+	{	
+		free_all(NULL, buffer, executable_path);
 		exit(EXIT_SUCCESS);
+		break;
 	}
 
 	buffer[strcspn(buffer, "\n")] = END_STRING_CHAR;
 
 	if (strcmp(buffer, "exit") == 0)
 	{
-	free(buffer);
-	free(executable_path);
-	exit(0);
+		free_all(NULL, buffer, executable_path);
+		exit(0);
+
 	}
 	else if (strcmp(buffer, "env") == 0)
 	{
@@ -47,13 +47,13 @@ int main(void)
 	{
 	char **args = parse_args(executable_path);
 	execute_command(args);
-	free_args(args);
+	free_all(args, NULL, NULL);
 	}
 	else
 	{
 	printf("%s: command not found\n", buffer);
 	}
-	free(buffer);
+	free_all(NULL, buffer, NULL);
 	buffer = NULL;
 	}
 
